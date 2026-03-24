@@ -69,6 +69,44 @@ Installed via official Kali meta-packages:
 └── tools/              # Custom tools (gitignored, persisted)
 ```
 
+## Building a Full Hacking Lab
+
+A single Kali container is great for learning Linux, but for practicing actual hacking you need target machines too. Here are your options:
+
+### Option 1: Docker Compose with multiple containers (recommended to start)
+
+Add vulnerable target machines as separate containers in `docker-compose.yml` on a shared private network. Kali attacks them — completely isolated from your real network.
+
+Popular ready-made vulnerable containers:
+
+| Container | What it teaches |
+|---|---|
+| `ghcr.io/digininja/dvwa` | Web hacking (SQLi, XSS, file upload, etc.) |
+| `webgoat/webgoat` | OWASP web vulnerabilities |
+| `bkimminich/juice-shop` | OWASP Juice Shop — more web hacking |
+| `tleemcjr/metasploitable2` | Network/service exploitation |
+
+### Option 2: Virtual Machines (more realistic, heavier)
+
+Use **VirtualBox** (free) with:
+- Kali Linux VM as the attacker
+- **Metasploitable2/3** as a vulnerable Linux server
+- **VulnHub** VMs — hundreds of downloadable targets at [vulnhub.com](https://vulnhub.com)
+
+More realistic than Docker (full OS, real network stack) but uses more RAM and disk.
+
+### Option 3: Online Platforms (zero setup)
+
+| Platform | Notes |
+|---|---|
+| [TryHackMe](https://tryhackme.com) | Best for beginners — guided learning paths |
+| [HackTheBox](https://hackthebox.com) | More challenging, CTF-style machines |
+| [PentesterLab](https://pentesterlab.com) | Web-focused, great for learning |
+
+No local setup needed — they provide a VPN and cloud-hosted target machines.
+
+---
+
 ## Notes
 
 - `network_mode: host` on macOS works through Docker Desktop's Linux VM — host-network scanning tools may have limited reach compared to native Linux.
