@@ -1,0 +1,6 @@
+# Personal files and downloaded tools — can get very large
+workspace/
+tools/
+
+# Docker build cache (if any local build artifacts end up here)
+.docker/
