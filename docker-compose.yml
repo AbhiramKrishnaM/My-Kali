@@ -1,0 +1,25 @@
+services:
+  kali:
+    # Build the image from the Dockerfile in this directory
+    build: .
+    image: my-kali
+
+    # Container name (makes it easy to reference later)
+    container_name: kali-lab
+
+    # Keep the container running interactively
+    stdin_open: true   # equivalent to docker run -i
+    tty: true          # equivalent to docker run -t
+
+    # Persistence: map a local folder into the container
+    # Any files you create in /root/workspace inside Kali
+    # are saved in ./workspace on your Mac — they survive container restarts
+    volumes:
+      - ./workspace:/root/workspace   # your personal files & scripts
+      - ./tools:/root/tools           # any custom tools you download
+
+    # Optional: allow network tools to work properly (e.g. nmap host scans)
+    network_mode: host
+
+    # Automatically restart the container if it crashes
+    restart: unless-stopped
