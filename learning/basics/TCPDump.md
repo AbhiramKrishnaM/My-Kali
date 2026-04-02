@@ -29,3 +29,12 @@ Don’t Resolve IP Addresses and Port Numbers
 
 # Filtering Expressions 
 
+
+
+
+
+
+```
+Remember that you can count the lines by piping the output via the wc command.
+eg:- sudo tcpdump  -r traffic.pcap icmp -n  | wc
+``` 
