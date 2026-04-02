@@ -1,0 +1,3 @@
+# TCP Dump Basics
+
+This room introduces some basic command-line arguments for using Tcpdump. The Tcpdump tool and its libpcap library are written in C and C++ and were released for Unix-like systems in the late 1980s or early 1990s. Consequently, they are very stable and offer optimal speed. The libpcap library is the foundation for various other networking tools today. Moreover, it was ported to MS Windows as winpcap.
